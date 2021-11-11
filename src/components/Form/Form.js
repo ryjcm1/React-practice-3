@@ -15,7 +15,13 @@ const Form = (props) => {
 
   const handleAddPerson =(e) =>{
     e.preventDefault()
-    if(username && userAge){
+    if(userAge < 0){
+      props.onSetError(" Please enter a valid age (> 0) ")
+    }
+    else if(!username || !userAge){
+      props.onSetError(" please enter a valid name and age (non-empty values) ")
+    }
+    else if(username && userAge){
       const newPerson = {username: username, age:userAge}
       props.onAddPerson(newPerson)
       setUserAge("")

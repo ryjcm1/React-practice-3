@@ -1,0 +1,8 @@
+.list-item{
+    border: 1px solid black;
+    height: 40px;
+    font-size: 1em;
+    font-weight: bold;
+    width: 100%;
+    margin: 10px auto;
+}
